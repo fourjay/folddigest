@@ -1,4 +1,6 @@
-This is a mirror of http://www.vim.org/scripts/script.php?script_id=3240
+This is a fork of an old script at
+
+    This is a mirror of http://www.vim.org/scripts/script.php?script_id=3240
 
 This plugin creates a new buffer with an outline view of all folds in the current buffer.
 It is based on vimscript #732.
