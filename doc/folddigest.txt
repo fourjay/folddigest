@@ -1,0 +1,23 @@
+*folddigest* overview spit of folds                    *folddigest.txt*
+
+title
+
+==============================================================================
+CONTENTS                                           *folddigest-contents*
+
+   1. INTRODUCTION                                      |folddigest-intro|
+   2. COMMANDS                                       |folddigest-commands|
+   2. CONFIGURATION                             |folddigest-configuration|
+
+==============================================================================
+1. INTRODUCTION                                           *folddigest-intro*
+
+FoldDigest generates a spit with an outline view of the current folds
+
+==============================================================================
+2. COMMANDS                                            *folddigest-commands*
+
+|:FoldDigest|   Open a split window with an overview of the current folds
+
+==============================================================================
+3. CONFIGURATION                                  *folddigest-configuration*
