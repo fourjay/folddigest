@@ -32,10 +32,10 @@ endfunction
 " CheckOptions {{{
 " Check options passed to the plugin and saves values for the rest of the script
 function! tdvimFolddigest#CheckOptions()
-  let options = !exists('g:folddigest_options') ? '' : g:folddigest_options
-  let s:use_flexnumwidth = tdvimFolddigest#HasFlag(options, 'flexnumwidth')
-  let s:use_nofoldclose = tdvimFolddigest#HasFlag(options, 'nofoldclose')
-  let s:use_vertical = tdvimFolddigest#HasFlag(options, 'vertical')
+  let l:options = !exists('g:folddigest_options') ? '' : g:folddigest_options
+  let s:use_flexnumwidth = tdvimFolddigest#HasFlag(l:options, 'flexnumwidth')
+  let s:use_nofoldclose = tdvimFolddigest#HasFlag(l:options, 'nofoldclose')
+  let s:use_vertical = tdvimFolddigest#HasFlag(l:options, 'vertical')
   if exists('g:folddigest_size') && (g:folddigest_size + 0) > 0
     let s:digest_size = g:folddigest_size + 0
   else
