@@ -353,13 +353,13 @@ endfunction
 " Is based in the function Tlist_Window_Close from the TagList plugin
 function! tdvimFolddigest#FoldDigestClose()
     " Make sure the folddigest window exists
-    let winnum = bufwinnr(g:FoldDigest_Window_Title)
-    if winnum == -1
-        echoerr "FoldDigest window is not opened"
+    let l:winnum = bufwinnr(g:FoldDigest_Window_Title)
+    if l:winnum == -1
+        echoerr 'FoldDigest window is not opened'
         return
     endif
 
-    if winnr() == winnum
+    if winnr() == l:winnum
         " Already in the folddigest window. Close it and return
         if winbufnr(2) != -1
             " If a window other than the folddigest window is open,
@@ -369,14 +369,14 @@ function! tdvimFolddigest#FoldDigestClose()
     else
         " Goto the folddigest window, close it and then come back to the
         " original window
-        let curbufnr = bufnr('%')
-        exe winnum . 'wincmd w'
+        let l:curbufnr = bufnr('%')
+        exe l:winnum . 'wincmd w'
         close
         " Need to jump back to the original window only if we are not
         " already in that window
-        let winnum = bufwinnr(curbufnr)
-        if winnr() != winnum
-            exe winnum . 'wincmd w'
+        let l:winnum = bufwinnr(l:curbufnr)
+        if winnr() != l:winnum
+            exe l:winnum . 'wincmd w'
         endif
     endif
 endfunction
