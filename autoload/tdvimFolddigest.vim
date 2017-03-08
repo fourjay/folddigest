@@ -195,8 +195,6 @@ function! tdvimFolddigest#MakeDigestBuffer()
         execute winnr.'wincmd w'
     endif
     let s:do_auto_refresh = 1
-    setlocal buftype=nofile bufhidden=hide noswapfile nowrap ft=
-    setlocal foldcolumn=0 nonumber
     match none
     call setbufvar(bufnr('%'), 'bufnr', bufnum)
     call setbufvar(bufnr('%'), 'bufname', bufname)
@@ -213,10 +211,6 @@ function! tdvimFolddigest#MakeDigestBuffer()
     hi def link folddigestFirstline Identifier
     hi def link folddigestLastline Identifier
     " Mappings
-    nnoremap <silent><buffer> <CR> :call tdvimFolddigest#Jump()<CR>
-    nnoremap <silent><buffer> r :call tdvimFolddigest#>Refresh()<CR>
-    nnoremap <buffer> <silent> <2-LeftMouse> :call tdvimFolddigest#Jump()<CR>
-    nnoremap <buffer> <silent> <nowait> q :quit<Cr>
     setlocal filetype=folddigest
 endfunction
 " }}}
