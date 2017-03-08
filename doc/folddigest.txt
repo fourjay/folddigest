@@ -17,7 +17,9 @@ FoldDigest generates a spit with an outline view of the current folds
 ==============================================================================
 2. COMMANDS                                            *folddigest-commands*
 
-|:FoldDigest|   Open a split window with an overview of the current folds
+*:FoldDigest*         Open a split window with an overview of the current folds
+
+*:FoldDigestToggle*   Toggle the overview split
 
 ==============================================================================
 3. CONFIGURATION                                  *folddigest-configuration*
