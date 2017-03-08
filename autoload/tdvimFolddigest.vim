@@ -56,12 +56,12 @@ endfunction
 " the folddigest
 " The window variable is called folddigested
 function! tdvimFolddigest#MarkMasterWindow()
-    let winnr = winnr()
+    let l:winnr = winnr()
 
     " Set the window and buffer controlled by folddigest
-    let fildDigestWinnr = bufwinnr(g:FoldDigest_Window_Title)
-    if fildDigestWinnr  > 1
-        call setwinvar(fildDigestWinnr , 'folddigested', winnr)
+    let l:fildDigestWinnr = bufwinnr(g:FoldDigest_Window_Title)
+    if l:fildDigestWinnr  > 1
+        call setwinvar(l:fildDigestWinnr , 'folddigested', l:winnr)
         "echomsg "Buffer marked as master: " . bufname('%') . ", " . winnr()
     endif
 endfunction
@@ -73,17 +73,17 @@ endfunction
 " This fubnction will take the value from the Folddigest window
 " local variable folddigested and jump to the indicated window.
 function! tdvimFolddigest#GoMasterWindow(...)
-    let flags = a:0 > 0 ? a:1 : ""
+    let l:flags = a:0 > 0 ? a:1 : ''
 
     " Test folddigest in Folddigest window
-    let fildDigestWinnr = bufwinnr(g:FoldDigest_Window_Title)
-    if fildDigestWinnr  > 1
+    let l:fildDigestWinnr = bufwinnr(g:FoldDigest_Window_Title)
+    if l:fildDigestWinnr  > 1
         " Get window controlled by folddigest
-        let winnr = getwinvar(fildDigestWinnr , 'folddigested')
-        execute winnr.'wincmd w'
-        return winnr
+        let l:winnr = getwinvar(l:fildDigestWinnr , 'folddigested')
+        execute l:winnr.'wincmd w'
+        return l:winnr
     " If folddigest window doesn't exists
-    elseif !tdvimFolddigest#HasFlag(flags, 'nosplit')
+    elseif !tdvimFolddigest#HasFlag(l:flags, 'nosplit')
         let bufname = getbufvar(bufnr('%'), 'bufname')
         if s:use_vertical
             if 0 < s:digest_size && s:digest_size < winwidth(0)
