@@ -1,6 +1,23 @@
+# FoldDigest
+
+This is a fairly useful outline of a file, based on fold markers.
+
+An example scenario, fold python based on indent. ``:FoldDigest`` will
+pull up a vertical buffer with list of functions with live links between
+the two.
+
+
 This is a fork of an old script at
 
     This is a mirror of http://www.vim.org/scripts/script.php?script_id=3240
+
+I've added:
+
+filetype + syntax for the folddigest buffer
+
+Help file (including notes about settings from the previous script 732
+
+# Original Readme
 
 This plugin creates a new buffer with an outline view of all folds in the current buffer.
 It is based on vimscript #732.
@@ -30,3 +47,26 @@ Usage:
    close FOLDDIGEST window
 
    You can also map your own keys to these commands
+
+Options:
+
+    'folddigest_options'
+                string (default "")
+        Set string flag which you need.  If you want to use more than two,
+        join by comma.
+
+          flexnumwidth  Narrow line number width as possible.
+          nofoldclose   don't close folds after ":call FoldDigest()".
+          vertical      Use :vsplit for FOLDDIGEST. (default :split)
+
+    'folddigest_size'
+                number (default 0)
+        FOLDDIGEST window size.  When 'folddigest_options' has "vertical"
+        flag, this value is interpretted as window height, and doesn't then
+        as window width.  If zero was specified height/width become half of
+        current window.
+
+    ex:
+        :let folddigest_options = "vertical,flexnumwidth"
+        :let folddigest_size = 30
+
