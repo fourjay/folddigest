@@ -20,12 +20,12 @@ set compatible&vim
 "   http://www.vim.org/scripts/script.php?script_id=732
 "
 
-" Folddigest window name:
+
 let g:FoldDigest_Window_Title = '==FOLDDIGEST=='
 
 " FoldDigest window position
-if !exists("g:FoldDigest_Pos")
-    let g:FoldDigest_Pos="right"
+if !exists('g:FoldDigest_Pos')
+    let g:FolsDigest_Pos='right'
 endif
 
 " Setup all commands: {{{
