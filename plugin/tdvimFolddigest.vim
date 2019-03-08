@@ -50,13 +50,6 @@ augroup END
 
 " Optional mapping: {{{
 " Example mapping F8 to FoldDigestToggle()
-"nnoremap  <unique> <silent>    <SID>TdvimFoldDigestToggle   :call tdvimFolddigest#FoldDigestToggle()<CR>
-"vnoremap  <unique> <silent>    <SID>TdvimFoldDigestToggle   <Esc>:call tdvimFolddigest#FoldDigestToggle()<CR>
-"inoremap  <unique> <silent>    <SID>TdvimFoldDigestToggle   <Esc>:call tdvimFolddigest#FoldDigestToggle()<CR>
-
-"nmap <silent> <F8> <SID>TdvimFoldDigestToggle
-"imap <silent> <F8> <SID>TdvimFoldDigestToggle
-"vmap <silent> <F8> <SID>TdvimFoldDigestToggle
 "}}}
 
 
