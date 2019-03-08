@@ -42,7 +42,7 @@ Options:
     as window width.  If zero was specified height/width become half of
     current window.
 
-ex:
+>
     :let folddigest_options = "vertical,flexnumwidth"
     :let folddigest_size = 30
-
+<
