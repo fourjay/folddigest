@@ -23,3 +23,26 @@ FoldDigest generates a spit with an outline view of the current folds
 
 ==============================================================================
 3. CONFIGURATION                                  *folddigest-configuration*
+
+Options:
+
+'folddigest_options'
+            string (default "")
+    Set string flag which you need.  If you want to use more than two,
+    join by comma.
+
+        flexnumwidth  Narrow line number width as possible.
+        nofoldclose   don't close folds after ":call FoldDigest()".
+        vertical      Use :vsplit for FOLDDIGEST. (default :split)
+
+'folddigest_size'
+            number (default 0)
+    FOLDDIGEST window size.  When 'folddigest_options' has "vertical"
+    flag, this value is interpretted as window height, and doesn't then
+    as window width.  If zero was specified height/width become half of
+    current window.
+
+ex:
+    :let folddigest_options = "vertical,flexnumwidth"
+    :let folddigest_size = 30
+
