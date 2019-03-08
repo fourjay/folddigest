@@ -46,3 +46,18 @@ Options:
     :let folddigest_options = "vertical,flexnumwidth"
     :let folddigest_size = 30
 <
+
+There are some <SID> functions exposed
+
+>
+"nnoremap  <unique> <silent>    <SID>TdvimFoldDigestToggle   :call
+tdvimFolddigest#FoldDigestToggle()<CR>
+"vnoremap  <unique> <silent>    <SID>TdvimFoldDigestToggle   <Esc>:call
+tdvimFolddigest#FoldDigestToggle()<CR>
+"inoremap  <unique> <silent>    <SID>TdvimFoldDigestToggle   <Esc>:call
+tdvimFolddigest#FoldDigestToggle()<CR>
+
+"nmap <silent> <F8> <SID>TdvimFoldDigestToggle
+"imap <silent> <F8> <SID>TdvimFoldDigestToggle
+"vmap <silent> <F8> <SID>TdvimFoldDigestToggle
+<
