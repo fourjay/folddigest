@@ -1,3 +1,15 @@
+" setup known state
+if exists('g:did_tdvimFolddigest') 
+      " \ || &compatible 
+      " \ || version < 700}
+    finish
+endif
+let g:did_tdvimFolddigest = '1'
+let s:save_cpo = &cpoptions
+set compatible&vim
+
+" minor maintenance josef.fortier@gmail.com
+
 " Folddigest plugin initialization
 " The plugin is implemented in the autocommands functions.
 "
@@ -7,32 +19,6 @@
 " Notes: based on Folddigest plugin by Taro Muraoka:
 "   http://www.vim.org/scripts/script.php?script_id=732
 "
-" Usage: {{{
-"	:FoldDigest
-"
-"   Transform all folds in the current buffer into digest tree form, and
-"   show it in another buffer.  The buffer is called ==FOLDDIGEST==.  It shows
-"   not only all fold start positions, but also a tree depended on original
-"   folds hierarchy.
-"
-"   In a FOLDDIGEST, you can move around the cursor, and when type <CR> jump
-"   to fold at under it.  If you enter FOLDDIGEST window from other windows,
-"   when depended buffer is availabeled, it will be synchronized
-"   automatically.  If you want to force synchronize, type "r" in a
-"   FOLDDIGEST buffer.
-"   It is also possible to jump to the folsd under the cursor with a double
-"   click.
-"   The FOLDDIGEST window is updated when entering in a new buffer.
-"
-"   :FoldDigestToggle
-"
-"   Toggles FOLDDIGEST window
-"
-"   :FoldDigestClose
-"
-"   close FOLDDIGEST window
-" }}}
-
 
 " Folddigest window name:
 let g:FoldDigest_Window_Title = '==FOLDDIGEST=='
@@ -74,4 +60,6 @@ augroup END
 "}}}
 
 
+" Return vim to users choice
+let &cpoptions = s:save_cpo
 " vim: ts=8 ft=vim nowrap fdm=marker
