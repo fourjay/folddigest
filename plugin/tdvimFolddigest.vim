@@ -6,7 +6,7 @@ if exists('g:did_tdvimFolddigest')
 endif
 let g:did_tdvimFolddigest = '1'
 let s:save_cpo = &cpoptions
-set compatible&vim
+set cpoptions&vim
 
 " minor maintenance josef.fortier@gmail.com
 
